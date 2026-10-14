@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="motion.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="service-request.css" />
+    <link rel="stylesheet" href="header-refinement.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -142,8 +143,8 @@
               </div>
             </div>
           </details>
-          <a class="btn btn-primary" href="#quote">
-            <span>Book an Appointment</span>
+          <a class="btn btn-primary az-header-book" href="#quote" aria-label="Book an appointment">
+            <span>Book Now</span>
           </a>
         </div>
       </div>
@@ -834,286 +835,66 @@
           <div class="quote-card mk-reveal">
             <h3>Book an Appointment</h3>
             <p>
-              Complete the form below and we’ll contact you to schedule service
-              or a free estimate.
+              Complete the form below and we’ll contact you to schedule service or a free estimate.
             </p>
-            <form
-              id="airzona-contact-form"
-              novalidate
-              action="https://api.web3forms.com/submit"
-              method="POST"
-            >
-              <input
-                type="hidden"
-                name="access_key"
-                value="d2b60d08-87a3-4c4a-ab81-ee1c70e3710a"
-              />
-              <input
-                type="hidden"
-                name="subject"
-                value="New Air-Zona HVAC Service Request"
-              />
-              <input
-                type="hidden"
-                name="from_name"
-                value="New Air-Zona HVAC Service Request"
-              />
-              <input
-                type="checkbox"
-                name="botcheck"
-                tabindex="-1"
-                autocomplete="off"
-                class="az-honeypot"
-                aria-hidden="true"
-              />
+            <form id="airzona-contact-form" novalidate action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="d2b60d08-87a3-4c4a-ab81-ee1c70e3710a" />
+              <input type="hidden" name="subject" value="New Air-Zona HVAC Service Request" />
+              <input type="hidden" name="from_name" value="Air-Zona Website" />
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="az-honeypot" aria-hidden="true" />
 
-              <div class="az-wizard-progress" aria-label="Form progress">
-                <span id="az-step-counter">Step 1 of 3</span>
-                <div class="az-progress-track">
-                  <div id="az-progress-fill" class="az-progress-fill"></div>
-                </div>
+              <div class="az-wizard-progress" aria-label="Form progress"><span id="az-step-counter">Step 1 of 3</span><div class="az-progress-track"><div id="az-progress-fill" class="az-progress-fill"></div></div></div>
+              <section class="az-wizard-step" data-step="0" aria-label="Contact Information">
+              <h4 class="az-form-heading">Contact Information</h4>
+              <div class="form-grid-2 form-row">
+                <div><label for="name">Full name <span aria-hidden="true">*</span></label><input id="name" name="Name" type="text" autocomplete="name" required /></div>
+                <div><label for="phone">Phone number <span aria-hidden="true">*</span></label><input id="phone" name="Phone" type="tel" autocomplete="tel" required /></div>
               </div>
-              <section
-                class="az-wizard-step"
-                data-step="0"
-                aria-label="Contact Information"
-              >
-                <h4 class="az-form-heading">Contact Information</h4>
-                <div class="form-grid-2 form-row">
-                  <div>
-                    <label for="name"
-                      >Full name <span aria-hidden="true">*</span></label
-                    ><input
-                      id="name"
-                      name="Name"
-                      type="text"
-                      autocomplete="name"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label for="phone"
-                      >Phone number <span aria-hidden="true">*</span></label
-                    ><input
-                      id="phone"
-                      name="Phone"
-                      type="tel"
-                      autocomplete="tel"
-                      required
-                    />
-                  </div>
+              <div class="form-row"><label for="email">Email address</label><input id="email" name="Email" type="email" autocomplete="email" /></div>
+              <fieldset class="az-form-fieldset form-row">
+                <legend>Preferred contact method</legend>
+                <div class="az-radio-options">
+                  <label><input type="radio" name="Preferred contact method" value="Phone call" checked /> Phone call</label>
+                  <label><input type="radio" name="Preferred contact method" value="Text message" /> Text message</label>
+                  <label><input type="radio" name="Preferred contact method" value="Email" /> Email</label>
                 </div>
-                <div class="form-row">
-                  <label for="email">Email address</label
-                  ><input
-                    id="email"
-                    name="Email"
-                    type="email"
-                    autocomplete="email"
-                  />
-                </div>
-                <fieldset class="az-form-fieldset form-row">
-                  <legend>Preferred contact method</legend>
-                  <div class="az-radio-options">
-                    <label
-                      ><input
-                        type="radio"
-                        name="Preferred contact method"
-                        value="Phone call"
-                        checked
-                      />
-                      Phone call</label
-                    >
-                    <label
-                      ><input
-                        type="radio"
-                        name="Preferred contact method"
-                        value="Text message"
-                      />
-                      Text message</label
-                    >
-                    <label
-                      ><input
-                        type="radio"
-                        name="Preferred contact method"
-                        value="Email"
-                      />
-                      Email</label
-                    >
-                  </div>
-                </fieldset>
+              </fieldset>
 
-                <div class="az-wizard-actions">
-                  <button type="button" class="btn btn-primary az-next">
-                    Next: Service Location →
-                  </button>
-                </div>
+              <div class="az-wizard-actions"><button type="button" class="btn btn-primary az-next">Next: Service Location →</button></div>
               </section>
-              <section
-                class="az-wizard-step"
-                data-step="1"
-                aria-label="Service Location"
-                hidden
-              >
-                <h4 class="az-form-heading">Service Location</h4>
-                <div class="form-row az-address-wrapper">
-                  <label for="street"
-                    >Street address <span aria-hidden="true">*</span></label
-                  ><input
-                    id="street"
-                    name="Street address"
-                    type="text"
-                    autocomplete="off"
-                    placeholder="Start typing your street address"
-                    aria-autocomplete="list"
-                    aria-controls="az-address-suggestions"
-                    aria-expanded="false"
-                    required
-                  />
-                  <div
-                    id="az-address-suggestions"
-                    class="az-address-suggestions"
-                    role="listbox"
-                    hidden
-                  ></div>
-                  <p class="az-address-help" id="az-address-help">
-                    Select a suggested address to fill in your city and ZIP, or
-                    enter your address manually.
-                  </p>
+              <section class="az-wizard-step" data-step="1" aria-label="Service Location" hidden>
+              <h4 class="az-form-heading">Service Location</h4>
+              <div class="form-row az-address-wrapper"><label for="street">Street address <span aria-hidden="true">*</span></label><input id="street" name="Street address" type="text" autocomplete="off" placeholder="Start typing your street address" aria-autocomplete="list" aria-controls="az-address-suggestions" aria-expanded="false" required /><div id="az-address-suggestions" class="az-address-suggestions" role="listbox" hidden></div><p class="az-address-help" id="az-address-help">Select a suggested address to fill in your city and ZIP, or enter your address manually.</p></div>
+              <div class="form-grid-2 form-row">
+                <div><label for="city">City <span aria-hidden="true">*</span></label>
+                  <input id="city" name="City" type="text" autocomplete="address-level2" placeholder="Enter your city" required />
                 </div>
-                <div class="form-grid-2 form-row">
-                  <div>
-                    <label for="city"
-                      >City <span aria-hidden="true">*</span></label
-                    >
-                    <input
-                      id="city"
-                      name="City"
-                      type="text"
-                      autocomplete="address-level2"
-                      placeholder="Enter your city"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label for="zip"
-                      >ZIP code <span aria-hidden="true">*</span></label
-                    ><input
-                      id="zip"
-                      name="ZIP code"
-                      type="text"
-                      inputmode="numeric"
-                      autocomplete="postal-code"
-                      pattern="[0-9]{5}"
-                      maxlength="5"
-                      placeholder="85001"
-                      title="Enter a five-digit ZIP code"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="az-wizard-actions">
-                  <button type="button" class="btn az-back">← Back</button
-                  ><button type="button" class="btn btn-primary az-next">
-                    Next: Service Details →
-                  </button>
-                </div>
+                <div><label for="zip">ZIP code <span aria-hidden="true">*</span></label><input id="zip" name="ZIP code" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" placeholder="85001" title="Enter a five-digit ZIP code" required /></div>
+              </div>
+              <div class="az-wizard-actions"><button type="button" class="btn az-back">← Back</button><button type="button" class="btn btn-primary az-next">Next: Service Details →</button></div>
               </section>
-              <section
-                class="az-wizard-step"
-                data-step="2"
-                aria-label="Service Details"
-                hidden
-              >
-                <h4 class="az-form-heading">Service Details</h4>
-                <div class="form-row">
-                  <label for="service"
-                    >Service needed <span aria-hidden="true">*</span></label
-                  >
-                  <select id="service" name="Service needed" required>
-                    <option value="" disabled selected>Select a service</option>
-                    <option>AC Repair</option>
-                    <option>AC Installation &amp; Replacement</option>
-                    <option>Heating &amp; Furnace Service</option>
-                    <option>HVAC Maintenance &amp; Tune-Up</option>
-                    <option>Ductwork Installation &amp; Repair</option>
-                    <option>Indoor Air Quality</option>
-                    <option>Thermostat Installation &amp; Replacement</option>
-                    <option>Emergency Service</option>
-                    <option>Not sure yet</option>
-                  </select>
+              <section class="az-wizard-step" data-step="2" aria-label="Service Details" hidden>
+              <h4 class="az-form-heading">Service Details</h4>
+              <div class="form-row"><label for="service">Service needed <span aria-hidden="true">*</span></label>
+                <select id="service" name="Service needed" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option>AC Repair</option><option>AC Installation &amp; Replacement</option><option>Heating &amp; Furnace Service</option><option>HVAC Maintenance &amp; Tune-Up</option><option>Ductwork Installation &amp; Repair</option><option>Indoor Air Quality</option><option>Thermostat Installation &amp; Replacement</option><option>Emergency Service</option><option>Not sure yet</option>
+                </select>
+              </div>
+              <fieldset class="az-form-fieldset form-row">
+                <legend>How soon do you need service? <span aria-hidden="true">*</span></legend>
+                <div class="az-radio-options az-radio-options-stack">
+                  <label><input type="radio" name="Service urgency" value="Emergency — as soon as possible" required /> Emergency — as soon as possible</label>
+                  <label><input type="radio" name="Service urgency" value="Within 1–2 days" required /> Within 1–2 days</label>
+                  <label><input type="radio" name="Service urgency" value="Flexible / Routine maintenance" required /> Flexible / Routine maintenance</label>
                 </div>
-                <fieldset class="az-form-fieldset form-row">
-                  <legend>
-                    How soon do you need service?
-                    <span aria-hidden="true">*</span>
-                  </legend>
-                  <div class="az-radio-options az-radio-options-stack">
-                    <label
-                      ><input
-                        type="radio"
-                        name="Service urgency"
-                        value="Emergency — as soon as possible"
-                        required
-                      />
-                      Emergency — as soon as possible</label
-                    >
-                    <label
-                      ><input
-                        type="radio"
-                        name="Service urgency"
-                        value="Within 1–2 days"
-                        required
-                      />
-                      Within 1–2 days</label
-                    >
-                    <label
-                      ><input
-                        type="radio"
-                        name="Service urgency"
-                        value="Flexible / Routine maintenance"
-                        required
-                      />
-                      Flexible / Routine maintenance</label
-                    >
-                  </div>
-                </fieldset>
-                <p id="az-emergency-notice" class="az-emergency-notice" hidden>
-                  For urgent assistance, call
-                  <a href="tel:+14802150956">(480) 215-0956</a>. Submitting this
-                  form does not guarantee immediate service.
-                </p>
-                <div class="form-row">
-                  <label for="message"
-                    >Describe the problem
-                    <span aria-hidden="true">*</span></label
-                  ><textarea
-                    id="message"
-                    name="Problem description"
-                    rows="4"
-                    placeholder="For example: My AC is running but not cooling the house."
-                    required
-                  ></textarea>
-                </div>
-                <p class="az-form-disclaimer">
-                  Submitting this request does not confirm an appointment.
-                  Air-Zona will contact you to discuss availability and schedule
-                  service.
-                </p>
-                <div class="az-wizard-actions az-final-actions">
-                  <button type="button" class="btn az-back">← Back</button
-                  ><button type="submit" class="btn btn-primary">
-                    <span>Send Service Request</span>
-                  </button>
-                </div>
+              </fieldset>
+              <p id="az-emergency-notice" class="az-emergency-notice" hidden>For urgent assistance, call <a href="tel:+14802150956">(480) 215-0956</a>. Submitting this form does not guarantee immediate service.</p>
+              <div class="form-row"><label for="message">Describe the problem <span aria-hidden="true">*</span></label><textarea id="message" name="Problem description" rows="4" placeholder="For example: My AC is running but not cooling the house." required></textarea></div>
+              <p class="az-form-disclaimer">Submitting this request does not confirm an appointment. Air-Zona will contact you to discuss availability and schedule service.</p>
+              <div class="az-wizard-actions az-final-actions"><button type="button" class="btn az-back">← Back</button><button type="submit" class="btn btn-primary"><span>Send Service Request</span></button></div>
               </section>
-              <p
-                id="airzona-form-status"
-                role="status"
-                aria-live="polite"
-                class="az-form-status"
-                hidden
-              ></p>
+              <p id="airzona-form-status" role="status" aria-live="polite" class="az-form-status" hidden></p>
             </form>
           </div>
         </div>
@@ -1255,57 +1036,35 @@
         const progress = document.getElementById('az-progress-fill');
         let currentStep = 0;
         function showStep(index) {
-          if (status && !status.hidden && !button.disabled && index !== 0) {
-            status.hidden = true;
-            status.textContent = '';
-          }
+          if (status && !status.hidden && !button.disabled && index !== 0) { status.hidden = true; status.textContent = ''; }
           currentStep = index;
-          steps.forEach((step, i) => {
-            step.hidden = i !== index;
-          });
+          steps.forEach((step, i) => { step.hidden = i !== index; });
           counter.textContent = 'Step ' + (index + 1) + ' of ' + steps.length;
-          progress.style.width = ((index + 1) / steps.length) * 100 + '%';
+          progress.style.width = ((index + 1) / steps.length * 100) + '%';
         }
         function validateStep(index) {
-          const fields = Array.from(
-            steps[index].querySelectorAll('input, select, textarea'),
-          );
+          const fields = Array.from(steps[index].querySelectorAll('input, select, textarea'));
           for (const field of fields) {
             if (field.disabled || field.type === 'hidden') continue;
-            if (!field.checkValidity()) {
-              field.reportValidity();
-              field.focus();
-              return false;
-            }
+            if (!field.checkValidity()) { field.reportValidity(); field.focus(); return false; }
           }
           return true;
         }
-        form.querySelectorAll('.az-next').forEach((btn) =>
-          btn.addEventListener('click', () => {
-            if (validateStep(currentStep))
-              showStep(Math.min(currentStep + 1, steps.length - 1));
-          }),
-        );
-        form.querySelectorAll('.az-back').forEach((btn) =>
-          btn.addEventListener('click', () => {
-            showStep(Math.max(0, currentStep - 1));
-          }),
-        );
+        form.querySelectorAll('.az-next').forEach(btn => btn.addEventListener('click', () => {
+          if (validateStep(currentStep)) showStep(Math.min(currentStep + 1, steps.length - 1));
+        }));
+        form.querySelectorAll('.az-back').forEach(btn => btn.addEventListener('click', () => {
+          showStep(Math.max(0, currentStep - 1));
+        }));
         showStep(0);
 
         function updateEmergencyNotice() {
-          const selected = form.querySelector(
-            'input[name="Service urgency"]:checked',
-          );
-          emergencyNotice.hidden = !(
-            selected && selected.value.startsWith('Emergency')
-          );
+          const selected = form.querySelector('input[name="Service urgency"]:checked');
+          emergencyNotice.hidden = !(selected && selected.value.startsWith('Emergency'));
         }
-        form
-          .querySelectorAll('input[name="Service urgency"]')
-          .forEach(function (radio) {
-            radio.addEventListener('change', updateEmergencyNotice);
-          });
+        form.querySelectorAll('input[name="Service urgency"]').forEach(function (radio) {
+          radio.addEventListener('change', updateEmergencyNotice);
+        });
         form.addEventListener('reset', function () {
           emergencyNotice.hidden = true;
           showStep(0);
@@ -1313,11 +1072,7 @@
         form.addEventListener('submit', async function (event) {
           event.preventDefault();
           for (let i = 0; i < steps.length; i++) {
-            if (!validateStep(i)) {
-              showStep(i);
-              validateStep(i);
-              return;
-            }
+            if (!validateStep(i)) { showStep(i); validateStep(i); return; }
           }
           button.disabled = true;
           label.textContent = 'Sending...';
@@ -1328,19 +1083,16 @@
             const response = await fetch(form.action, {
               method: 'POST',
               body: new FormData(form),
-              headers: { Accept: 'application/json' },
+              headers: { Accept: 'application/json' }
             });
             const result = await response.json();
-            if (!response.ok || !result.success)
-              throw new Error(result.message || 'Submission failed');
+            if (!response.ok || !result.success) throw new Error(result.message || 'Submission failed');
             form.reset();
             status.style.color = '#166534';
-            status.textContent =
-              'Thank you! Your service request was sent. We will contact you to discuss scheduling; your appointment is not yet confirmed.';
+            status.textContent = 'Thank you! Your service request was sent. We will contact you to discuss scheduling; your appointment is not yet confirmed.';
           } catch (error) {
             status.style.color = '#b91c1c';
-            status.textContent =
-              'Sorry, your request could not be sent. Please call (480) 215-0956 or try again.';
+            status.textContent = 'Sorry, your request could not be sent. Please call (480) 215-0956 or try again.';
           } finally {
             button.disabled = false;
             label.textContent = 'Send Service Request';
@@ -1358,113 +1110,59 @@
         const zip = document.getElementById('zip');
         const list = document.getElementById('az-address-suggestions');
         if (!street || !city || !zip || !list) return;
-        let timer,
-          controller,
-          matches = [],
-          active = -1;
-        function close() {
-          list.hidden = true;
-          list.replaceChildren();
-          street.setAttribute('aria-expanded', 'false');
-          active = -1;
-        }
+        let timer, controller, matches = [], active = -1;
+        function close() { list.hidden = true; list.replaceChildren(); street.setAttribute('aria-expanded', 'false'); active = -1; }
         function choose(item) {
           const p = item.properties || {};
-          street.value =
-            [p.housenumber, p.street].filter(Boolean).join(' ') ||
-            p.address_line1 ||
-            street.value;
-          city.value =
-            p.city || p.town || p.village || p.municipality || city.value;
-          if (p.postcode && /^\d{5}$/.test(p.postcode.slice(0, 5)))
-            zip.value = p.postcode.slice(0, 5);
+          street.value = [p.housenumber, p.street].filter(Boolean).join(' ') || p.address_line1 || street.value;
+          city.value = p.city || p.town || p.village || p.municipality || city.value;
+          if (p.postcode && /^\d{5}$/.test(p.postcode.slice(0,5))) zip.value = p.postcode.slice(0,5);
           close();
-          city.dispatchEvent(new Event('input', { bubbles: true }));
-          zip.dispatchEvent(new Event('input', { bubbles: true }));
+          city.dispatchEvent(new Event('input', { bubbles:true }));
+          zip.dispatchEvent(new Event('input', { bubbles:true }));
         }
         function render(items) {
-          close();
-          matches = items;
+          close(); matches = items;
           if (!items.length) return;
           items.forEach((item, i) => {
             const p = item.properties || {};
             const option = document.createElement('button');
-            option.type = 'button';
-            option.className = 'az-address-option';
-            option.setAttribute('role', 'option');
+            option.type = 'button'; option.className = 'az-address-option'; option.setAttribute('role','option');
             option.id = 'az-address-option-' + i;
-            option.textContent =
-              p.formatted ||
-              [p.address_line1, p.address_line2].filter(Boolean).join(', ');
-            option.addEventListener('mousedown', (e) => e.preventDefault());
+            option.textContent = p.formatted || [p.address_line1,p.address_line2].filter(Boolean).join(', ');
+            option.addEventListener('mousedown', e => e.preventDefault());
             option.addEventListener('click', () => choose(item));
             list.appendChild(option);
           });
-          list.hidden = false;
-          street.setAttribute('aria-expanded', 'true');
+          list.hidden = false; street.setAttribute('aria-expanded','true');
         }
         street.addEventListener('input', () => {
-          clearTimeout(timer);
-          if (controller) controller.abort();
-          close();
+          clearTimeout(timer); if (controller) controller.abort(); close();
           const query = street.value.trim();
           if (query.length < 5) return;
           timer = setTimeout(async () => {
             controller = new AbortController();
             try {
-              const url = new URL(
-                'https://api.geoapify.com/v1/geocode/autocomplete',
-              );
-              url.search = new URLSearchParams({
-                text: query,
-                filter: 'countrycode:us',
-                bias: 'proximity:-111.83,33.31',
-                limit: '5',
-                format: 'geojson',
-                apiKey: API_KEY,
-              }).toString();
-              const response = await fetch(url, { signal: controller.signal });
+              const url = new URL('https://api.geoapify.com/v1/geocode/autocomplete');
+              url.search = new URLSearchParams({text:query, filter:'countrycode:us', bias:'proximity:-111.83,33.31', limit:'5', format:'geojson', apiKey:API_KEY}).toString();
+              const response = await fetch(url, {signal:controller.signal});
               if (!response.ok) throw new Error('Address lookup unavailable');
               const data = await response.json();
-              if (street.value.trim() === query)
-                render(
-                  (data.features || []).filter(
-                    (f) =>
-                      f.properties &&
-                      (f.properties.street || f.properties.address_line1),
-                  ),
-                );
-            } catch (error) {
-              if (error.name !== 'AbortError') close();
-            }
+              if (street.value.trim() === query) render((data.features || []).filter(f => f.properties && (f.properties.street || f.properties.address_line1)));
+            } catch (error) { if (error.name !== 'AbortError') close(); }
           }, 350);
         });
-        street.addEventListener('keydown', (e) => {
+        street.addEventListener('keydown', e => {
           if (list.hidden) return;
-          if (e.key === 'Escape') {
-            close();
-            return;
-          }
+          if (e.key === 'Escape') { close(); return; }
           if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-            e.preventDefault();
-            active =
-              (active + (e.key === 'ArrowDown' ? 1 : -1) + matches.length) %
-              matches.length;
-            Array.from(list.children).forEach((el, i) =>
-              el.classList.toggle('az-active', i === active),
-            );
+            e.preventDefault(); active = (active + (e.key === 'ArrowDown' ? 1 : -1) + matches.length) % matches.length;
+            Array.from(list.children).forEach((el,i) => el.classList.toggle('az-active',i===active));
           }
-          if (e.key === 'Enter' && active >= 0) {
-            e.preventDefault();
-            choose(matches[active]);
-          }
+          if (e.key === 'Enter' && active >= 0) { e.preventDefault(); choose(matches[active]); }
         });
-        document.addEventListener('click', (e) => {
-          if (!e.target.closest('.az-address-wrapper')) close();
-        });
-        document
-          .getElementById('airzona-contact-form')
-          .addEventListener('reset', close);
+        document.addEventListener('click', e => { if (!e.target.closest('.az-address-wrapper')) close(); });
+        document.getElementById('airzona-contact-form').addEventListener('reset', close);
       })();
     </script>
     <script src="motion.js"></script>

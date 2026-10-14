@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="motion.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="service-request.css">
+<link rel="stylesheet" href="header-refinement.css">
 </head>
 <body>
 <div class="demo-notice">Sitio web de demostración — solo para pruebas</div>
@@ -35,9 +36,9 @@
     <nav class="nav-links" aria-label="Principal">
       <a href="#services">Servicios</a>
       <a href="#gallery">Galería</a>
-      <a href="#why">Por Qué Elegirnos</a>
-      <a href="#areas">Áreas de Servicio</a>
-      <a href="#faq">Preguntas Frecuentes</a>
+      <a href="#why">Nosotros</a>
+      <a href="#areas">Zonas</a>
+      <a href="#faq">FAQ</a>
     </nav>
     <div class="header-actions">
       <a class="header-phone" href="tel:+14802150956">
@@ -71,8 +72,8 @@
           </div>
         </div>
       </details>
-      <a class="btn btn-primary" href="#quote">
-        <span>Reservar una Cita</span>
+      <a class="btn btn-primary az-header-book" href="#quote" aria-label="Reservar una cita">
+        <span>Reservar</span>
       </a>
     </div>
   </div>
@@ -358,9 +359,9 @@
               <h4 class="az-form-heading">Información de contacto</h4>
               <div class="form-grid-2 form-row">
                 <div><label for="name">Nombre completo <span aria-hidden="true">*</span></label><input id="name" name="Nombre" type="text" autocomplete="name" required /></div>
-                <div><label for="phone">Número de teléfono <span aria-hidden="true">*</span></label><input id="phone" name="Teléfono" type="tel" autocomplete="tel" required /></div>
+                <div><label for="phone">Número de teléfono <span aria-hidden="true">*</span></label><input id="phone" name="Telefono" type="tel" autocomplete="tel" required /></div>
               </div>
-              <div class="form-row"><label for="email">Correo electrónico</label><input id="email" name="Correo electrónico" type="email" autocomplete="email" /></div>
+              <div class="form-row"><label for="email">Correo electrónico</label><input id="email" name="Correo electronico" type="email" autocomplete="email" /></div>
               <fieldset class="az-form-fieldset form-row">
                 <legend>Medio de contacto preferido</legend>
                 <div class="az-radio-options">
@@ -374,12 +375,12 @@
               </section>
               <section class="az-wizard-step" data-step="1" aria-label="Dirección del servicio" hidden>
               <h4 class="az-form-heading">Dirección del servicio</h4>
-              <div class="form-row az-address-wrapper"><label for="street">Dirección (calle y número) <span aria-hidden="true">*</span></label><input id="street" name="Dirección" type="text" autocomplete="off" placeholder="Comienza a escribir tu dirección" aria-autocomplete="list" aria-controls="az-address-suggestions" aria-expanded="false" required /><div id="az-address-suggestions" class="az-address-suggestions" role="listbox" hidden></div><p class="az-address-help" id="az-address-help">Selecciona una dirección sugerida para completar la ciudad y el código postal, o escribe tu dirección manualmente.</p></div>
+              <div class="form-row az-address-wrapper"><label for="street">Dirección (calle y número) <span aria-hidden="true">*</span></label><input id="street" name="Direccion" type="text" autocomplete="off" placeholder="Comienza a escribir tu dirección" aria-autocomplete="list" aria-controls="az-address-suggestions" aria-expanded="false" required /><div id="az-address-suggestions" class="az-address-suggestions" role="listbox" hidden></div><p class="az-address-help" id="az-address-help">Selecciona una dirección sugerida para completar la ciudad y el código postal, o escribe tu dirección manualmente.</p></div>
               <div class="form-grid-2 form-row">
                 <div><label for="city">Ciudad <span aria-hidden="true">*</span></label>
                   <input id="city" name="Ciudad" type="text" autocomplete="address-level2" placeholder="Escribe tu ciudad" required />
                 </div>
-                <div><label for="zip">Código postal <span aria-hidden="true">*</span></label><input id="zip" name="Código postal" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" placeholder="85001" title="Ingresa un código postal de 5 dígitos" required /></div>
+                <div><label for="zip">Código postal <span aria-hidden="true">*</span></label><input id="zip" name="Codigo postal" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" placeholder="85001" title="Ingresa un código postal de 5 dígitos" required /></div>
               </div>
               <div class="az-wizard-actions"><button type="button" class="btn az-back">← Atrás</button><button type="button" class="btn btn-primary az-next">Siguiente: Detalles del servicio →</button></div>
               </section>
@@ -400,7 +401,7 @@
                 </div>
               </fieldset>
               <p id="az-emergency-notice" class="az-emergency-notice" hidden>Si necesitas atención urgente, llama al <a href="tel:+14802150956">(480) 215-0956</a>. Enviar este formulario no garantiza atención inmediata.</p>
-              <div class="form-row"><label for="message">Describe el problema <span aria-hidden="true">*</span></label><textarea id="message" name="Descripción del problema" rows="4" placeholder="Por ejemplo: Mi aire acondicionado enciende, pero no enfría la casa." required></textarea></div>
+              <div class="form-row"><label for="message">Describe el problema <span aria-hidden="true">*</span></label><textarea id="message" name="Descripcion del problema" rows="4" placeholder="Por ejemplo: Mi aire acondicionado enciende, pero no enfría la casa." required></textarea></div>
               <p class="az-form-disclaimer">Enviar esta solicitud no confirma una cita. Air-Zona se comunicará contigo para coordinar el servicio.</p>
               <div class="az-wizard-actions az-final-actions"><button type="button" class="btn az-back">← Atrás</button><button type="submit" class="btn btn-primary"><span>Enviar solicitud de servicio</span></button></div>
               </section>

@@ -1,0 +1,23 @@
+/* Air-Zona compact desktop header — shared by English and Spanish. */
+@media (min-width: 1180px) {
+  .mk-header .header-inner { gap: 16px; }
+  .mk-header .nav-links { gap: clamp(10px, 1.1vw, 20px); }
+  .mk-header .nav-links a { white-space: nowrap; font-size: 13px; }
+  .mk-header .header-actions { gap: 9px; }
+  .mk-header .header-actions > .lang-toggle,
+  .mk-header .header-actions > .az-header-book {
+    box-sizing: border-box;
+    min-height: 40px;
+    height: 40px;
+    padding: 0 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .mk-header .header-actions > .az-header-book { min-width: 90px; }
+}
