@@ -1,0 +1,51 @@
+/* Air-Zona service request form enhancements — loaded after style.css */
+.az-honeypot { display: none !important; }
+.quote-card .az-form-heading { font-size: 1rem; font-weight: 700; margin: 26px 0 14px; padding-bottom: 8px; border-bottom: 1px solid rgba(20,45,80,.13); }
+.quote-card .az-form-fieldset { border: 0; padding: 0; min-width: 0; margin-left: 0; margin-right: 0; }
+.quote-card .az-form-fieldset legend { font-size: inherit; font-weight: 600; margin-bottom: 10px; padding: 0; }
+.quote-card .az-radio-options { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+.quote-card .az-radio-options-stack { flex-direction: column; gap: 12px; }
+.quote-card .az-radio-options label { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; cursor: pointer; margin: 0; }
+.quote-card .az-radio-options input[type="radio"] { width: 17px; height: 17px; margin: 0; flex: 0 0 auto; accent-color: #e81931; }
+.quote-card .az-emergency-notice { padding: 12px 14px; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 8px; color: #881337; margin: 12px 0 18px; }
+.quote-card .az-emergency-notice a { color: inherit; font-weight: 700; text-decoration: underline; }
+.quote-card .az-form-disclaimer { font-size: .85rem; line-height: 1.55; margin: 16px 0; opacity: .85; }
+.quote-card .az-form-status { margin-top: 12px; }
+[hidden] { display: none !important; }
+@media (max-width: 600px) { .quote-card .az-radio-options:not(.az-radio-options-stack) { gap: 12px; } }
+
+/* Three-step service request wizard */
+.quote-card .az-wizard-step[hidden] { display:none !important; }
+.quote-card .az-wizard-progress { margin: 20px 0 8px; font-size: .85rem; font-weight: 700; color: #233a59; }
+.quote-card .az-progress-track { height: 6px; margin-top: 9px; background: #e7edf5; border-radius: 99px; overflow: hidden; }
+.quote-card .az-progress-fill { width: 33.333%; height: 100%; background: #e81931; border-radius: inherit; transition: width .25s ease; }
+.quote-card .az-wizard-step .az-form-heading { margin-top: 20px; }
+.quote-card .az-wizard-actions { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top: 22px; }
+.quote-card .az-wizard-actions .az-next { margin-left:auto; }
+.quote-card .az-wizard-actions .btn { width:auto; min-height:42px; padding: 10px 18px; }
+.quote-card .az-wizard-actions .az-back { background: #edf2f7; color:#173253; border: 1px solid #d5deeb; }
+.quote-card .az-wizard-actions .az-back:hover { background:#dfe7f0; }
+.quote-card .az-final-actions .btn[type="submit"] { flex:1; }
+@media(max-width:420px) { .quote-card .az-wizard-actions .btn { padding:10px 12px; font-size:.85rem; } }
+
+/* Compact wizard: no forced height or unused vertical space */
+.quote-card { height:auto !important; min-height:0 !important; align-self:start !important; }
+.quote-card form#airzona-contact-form { height:auto !important; min-height:0 !important; display:block !important; }
+.quote-card .az-wizard-progress { margin:14px 0 12px !important; }
+.quote-card .az-progress-track { margin-top:7px; }
+.quote-card .az-wizard-step { padding:0 !important; margin:0 !important; min-height:0 !important; height:auto !important; }
+.quote-card .az-wizard-step .az-form-heading { margin:14px 0 10px !important; padding-bottom:7px; }
+.quote-card .az-wizard-step .form-row { margin-bottom:12px !important; }
+.quote-card .az-wizard-actions { margin-top:14px !important; }
+.quote-card .az-form-status[hidden] { display:none !important; }
+.quote-card .az-form-status:not([hidden]) { margin-top:14px; }
+.quote-card .az-form-disclaimer { margin:10px 0; }
+@media(min-width:768px) { .quote-card { margin-top:0 !important; } }
+
+/* Geoapify address suggestion dropdown */
+.quote-card .az-address-wrapper { position:relative; }
+.quote-card .az-address-suggestions { position:absolute; top:calc(100% - 4px); left:0; right:0; z-index:30; background:#fff; border:1px solid #cdd7e5; border-radius:8px; box-shadow:0 12px 28px rgba(12,34,68,.18); max-height:240px; overflow-y:auto; }
+.quote-card .az-address-suggestions[hidden] { display:none!important; }
+.quote-card .az-address-option { display:block; width:100%; text-align:left; padding:11px 12px; border:0; border-bottom:1px solid #eef1f6; background:#fff; color:#172b4a; font:inherit; font-size:.85rem; cursor:pointer; }
+.quote-card .az-address-option:hover,.quote-card .az-address-option:focus,.quote-card .az-address-option.az-active { background:#f1f5fb; outline:none; }
+.quote-card .az-address-help { font-size:.75rem; color:#596b83; line-height:1.35; margin:5px 0 0; }
