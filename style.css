@@ -435,8 +435,8 @@ body.nav-scroll-lock {
     linear-gradient(
       115deg,
       rgba(11, 31, 63, 0.94) 0%,
-      rgba(11, 31, 63, 0.82) 45%,
-      rgba(11, 31, 63, 0.38) 100%
+      rgba(11, 31, 63, 0.82) 0%,
+      rgba(11, 31, 63, 0.38) 0%
     ),
     url('assets/commercial-rooftop-carrier-condensers.jpg') center/cover
       no-repeat;
